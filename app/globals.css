@@ -1,3 +1,12 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title {
+    @apply text-center text-primary font-bold text-3xl;
+}
+
+.nav {
+    @apply text-textDark font-normal text-base 
+    hover:text-secondary hover:transition-all ease-in-out duration-300;
+}
