@@ -22,7 +22,8 @@ export default function RootLayout({
         <html lang="fr">
             <body
                 className={`${inter.className} bg-background flex flex-col 
-                mx-4 mt-8 md:mx-8 xl:mx-72 xl:mt-12
+                px-4 md:px-8 lg:px-16 xl:max-w-7xl mx-auto
+                mt-8 xl:mt-12
                 selection:bg-secondary selection:text-background`}
             >
                 <NextTopLoader color="#93532F" height={5} showSpinner={false} />
