@@ -13,6 +13,12 @@
     hover:text-secondary hover:transition-all ease-in-out duration-300;
 }
 
+/* Smooth nav scrolling */
+
+* {
+    scroll-behavior: smooth !important;
+}
+
 /* Scroll bar CSS global style */
 
 body::-webkit-scrollbar {

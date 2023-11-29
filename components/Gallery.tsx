@@ -19,7 +19,7 @@ const pictures = [
 
 export default function Gallery() {
     return (
-        <section>
+        <section id="gallery">
             <h2 className={`${syne.className} title`}>Mes projets</h2>
 
             {/* Buttons */}
