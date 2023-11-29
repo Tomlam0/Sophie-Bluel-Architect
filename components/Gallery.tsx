@@ -1,4 +1,4 @@
-import Button from "./common/Button";
+import Filter from "./ui/Filter";
 
 import Image from "next/image";
 import { Syne } from "next/font/google";
@@ -27,10 +27,10 @@ export default function Gallery() {
                 className="flex flex-col md:flex-row md:justify-center
             gap-7 mt-12 w-3/4 mx-auto md:w-full"
             >
-                <Button text="Tous" />
-                <Button text="Objets" />
-                <Button text="Appartements" />
-                <Button text="Hôtels & restaurants" />
+                <Filter text="Tous" />
+                <Filter text="Objets" />
+                <Filter text="Appartements" />
+                <Filter text="Hôtels & restaurants" />
             </div>
 
             {/* Picture Grid */}
