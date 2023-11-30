@@ -21,8 +21,14 @@ export default function Filter({ text }: FilterProps) {
         <button
             className={clsx(
                 syne.className,
-                "text-primary font-bold border border-primary rounded-full px-5 py-2",
-                { "text-placeholder bg-primary": isActive }
+                {
+                    "text-primary font-bold border border-primary rounded-full px-5 py-2":
+                        !isActive,
+                },
+                {
+                    " text-placeholder font-bold bg-primary rounded-full px-5 py-2":
+                        isActive,
+                }
             )}
             onClick={toggleActive}
         >

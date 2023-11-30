@@ -4,7 +4,10 @@ import { PiInstagramLogoLight } from "react-icons/pi";
 
 function Nav() {
     return (
-        <nav className="flex flex-col md:flex-row md:justify-between md:gap-10">
+        <nav
+            className="flex flex-col md:flex-row md:justify-between
+        md:gap-10 mt-8 xl:mt-12"
+        >
             <Link href="/" className="flex justify-center">
                 <Image
                     src="/images/logo.svg"

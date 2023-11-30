@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Work_Sans } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 
 import Nav from "@/components/Nav";
+const Footer = dynamic(() => import("@/components/Footer"));
 import "./globals.css";
 
 const inter = Work_Sans({ subsets: ["latin"] });
@@ -22,13 +24,18 @@ export default function RootLayout({
         <html lang="fr">
             <body
                 className={`${inter.className} bg-background flex flex-col 
-                px-4 md:px-8 lg:px-16 xl:max-w-7xl mx-auto
-                mt-8 xl:mt-12
                 selection:bg-secondary selection:text-background`}
             >
-                <NextTopLoader color="#93532F" height={5} showSpinner={false} />
-                <Nav />
-                {children}
+                <div className="px-4 md:px-8 lg:px-16 xl:max-w-7xl mx-auto mt-8 xl:mt-12">
+                    <NextTopLoader
+                        color="#93532F"
+                        height={5}
+                        showSpinner={false}
+                    />
+                    <Nav />
+                    {children}
+                </div>
+                <Footer />
             </body>
         </html>
     );

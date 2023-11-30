@@ -15,7 +15,7 @@ export default function Contact() {
             {/* Form */}
             <form className="flex flex-col gap-10 mt-10 w-2/4 lg:w-1/3">
                 <div>
-                    <label className="text-sm font-medium" htmlFor="name">
+                    <label className="text-sm" htmlFor="name">
                         Nom
                     </label>
                     <input
@@ -26,7 +26,7 @@ export default function Contact() {
                     />
                 </div>
                 <div>
-                    <label className="text-sm font-medium" htmlFor="email">
+                    <label className="text-sm" htmlFor="email">
                         E-mail
                     </label>
                     <input
@@ -37,7 +37,7 @@ export default function Contact() {
                     />
                 </div>
                 <div>
-                    <label className="text-sm font-medium" htmlFor="message">
+                    <label className="text-sm" htmlFor="message">
                         Message
                     </label>
 
