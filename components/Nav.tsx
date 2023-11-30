@@ -16,13 +16,13 @@ function Nav() {
             </Link>
             <ul className="flex justify-center flex-wrap gap-8 mt-8 md:mt-0">
                 <li className="nav ">
-                    <Link href="#gallery">projets</Link>
+                    <a href="#gallery">projets</a>
                 </li>
                 <li className="nav">
-                    <Link href="#contact">contact</Link>
+                    <a href="#contact">contact</a>
                 </li>
                 <li className="nav">
-                    <Link href="">login</Link>
+                    <Link href="/">login</Link>
                 </li>
                 <li>
                     <Link href="https://www.instagram.com/" target="blank">
