@@ -24,17 +24,12 @@ export default function RootLayout({
         <html lang="fr">
             <body
                 className={`${inter.className} bg-background flex flex-col 
-                selection:bg-secondary selection:text-background`}
+                selection:bg-secondary selection:text-background
+                px-4 md:px-8 lg:px-16 xl:max-w-7xl mx-auto mt-8`}
             >
-                <div className="px-4 md:px-8 lg:px-16 xl:max-w-7xl mx-auto mt-8 xl:mt-12">
-                    <NextTopLoader
-                        color="#93532F"
-                        height={5}
-                        showSpinner={false}
-                    />
-                    <Nav />
-                    {children}
-                </div>
+                <NextTopLoader color="#93532F" height={5} showSpinner={false} />
+                <Nav />
+                {children}
                 <Footer />
             </body>
         </html>

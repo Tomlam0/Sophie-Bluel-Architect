@@ -13,27 +13,22 @@ import * as z from "zod";
 import { Syne } from "next/font/google";
 
 // Zod validation
-const FormSchema = z.object({
-    name: z
-        .string()
-        .min(1, "Ce champ est requis")
-        .min(2, "Au moins 2 caractères requis")
-        .max(50, "Maximum 50 caractères"),
+const LoginFormSchema = z.object({
     email: z
         .string()
         .min(1, "Ce champ est requis")
         .email("Adresse email invalide")
         .max(254, "Maximum 254 caractères"),
-    message: z
+    password: z
         .string()
         .min(1, "Ce champ est requis")
-        .min(10, "Au moins 10 caractères requis")
-        .max(1000, "Maximum 1000 caractères"),
+        .min(8, "Au moins 8 caractères requis")
+        .max(100, "Maximum 100 caractères"),
 });
 
-type Inputs = z.infer<typeof FormSchema>;
+type Inputs = z.infer<typeof LoginFormSchema>;
 
-export default function Contact() {
+export default function LoginForm() {
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
     // React Hook Form validation
@@ -42,7 +37,7 @@ export default function Contact() {
         handleSubmit,
         formState: { errors },
     } = useForm<Inputs>({
-        resolver: zodResolver(FormSchema),
+        resolver: zodResolver(LoginFormSchema),
     });
 
     // Checking if Captcha is resolved before submit validation
@@ -51,36 +46,18 @@ export default function Contact() {
             toast.error("Veuillez résoudre le CAPTCHA.");
             return;
         }
-        toast.success("Message envoyé avec succès!");
+        toast.success("Vous êtes connecté");
     };
 
     return (
-        <section id="contact" className="flex flex-col items-center">
-            <h2 className={`${syne.className} title`}>Contact</h2>
-            <p className="mt-1">Vous avez un projet ? Discutons-en</p>
+        <section id="login" className="flex flex-col items-center">
+            <h2 className={`${syne.className} title`}>Log In</h2>
 
             {/* Form */}
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="flex flex-col gap-10 mt-10 w-3/4 md:w-2/4 lg:w-1/3"
             >
-                <div>
-                    <label className="text-sm" htmlFor="name">
-                        Nom
-                    </label>
-                    <input
-                        className="w-full p-3 text-sm shadow-md
-                        outline-none focus:border focus:border-primary focus:rounded"
-                        type="text"
-                        id="name"
-                        {...register("name")}
-                    />
-                    {errors.name && (
-                        <span className="text-secondary text-xs">
-                            {errors.name.message}
-                        </span>
-                    )}
-                </div>
                 <div>
                     <label className="text-sm" htmlFor="email">
                         E-mail
@@ -99,20 +76,19 @@ export default function Contact() {
                     )}
                 </div>
                 <div>
-                    <label className="text-sm" htmlFor="message">
-                        Message
+                    <label className="text-sm" htmlFor="password">
+                        Mot de passe
                     </label>
-
-                    <textarea
+                    <input
                         className="w-full p-3 text-sm shadow-md
                         outline-none focus:border focus:border-primary focus:rounded"
-                        rows={6}
-                        id="message"
-                        {...register("message")}
-                    ></textarea>
-                    {errors.message && (
+                        type="password"
+                        id="password"
+                        {...register("password")}
+                    />
+                    {errors.password && (
                         <span className="text-secondary text-xs">
-                            {errors.message.message}
+                            {errors.password.message}
                         </span>
                     )}
                 </div>
@@ -124,8 +100,17 @@ export default function Contact() {
                     onChange={setCaptchaToken}
                     size="compact"
                 />
-                <Button text="Envoyer" />
+                <Button text="Se connecter" />
             </form>
+
+            <a
+                className="text-sm underline mt-9
+            hover:text-secondary hover:transition-all ease-in-out duration-300"
+                href="#"
+            >
+                Mot de passe oublié
+            </a>
+
             <ToastContainer />
         </section>
     );
