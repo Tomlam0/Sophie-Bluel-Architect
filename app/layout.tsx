@@ -3,9 +3,9 @@ import dynamic from "next/dynamic";
 import { Work_Sans } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 
-import Nav from "@/components/Nav";
-const Footer = dynamic(() => import("@/components/Footer"));
-import BackToTopButton from "@/components/ui/BackToTopButton";
+import Nav from "@/components/layout/Nav";
+const Footer = dynamic(() => import("@/components/layout/Footer"));
+import BackToTopButton from "@/components/common/BackToTopButton";
 
 import "./globals.css";
 

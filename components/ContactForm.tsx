@@ -1,16 +1,17 @@
 "use client";
 
 const syne = Syne({ subsets: ["latin"] });
-import Button from "./ui/Button";
+import { Syne } from "next/font/google";
 
-import ReCAPTCHA from "react-google-recaptcha";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { useForm, SubmitHandler } from "react-hook-form";
+import Button from "./common/Button";
+
 import { useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Syne } from "next/font/google";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ReCaptcha from "./services/ReCaptcha";
 
 // Zod validation
 const FormSchema = z.object({
@@ -33,7 +34,7 @@ const FormSchema = z.object({
 
 type Inputs = z.infer<typeof FormSchema>;
 
-export default function Contact() {
+export default function ContactForm() {
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
     // React Hook Form validation
@@ -119,14 +120,7 @@ export default function Contact() {
                         </span>
                     )}
                 </div>
-                <ReCAPTCHA
-                    className="flex justify-center"
-                    sitekey={
-                        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string
-                    }
-                    onChange={setCaptchaToken}
-                    size="compact"
-                />
+                <ReCaptcha onChange={setCaptchaToken} />
                 <Button text="Envoyer" />
             </form>
             <ToastContainer />

@@ -1,7 +1,7 @@
 "use client";
 
 const syne = Syne({ subsets: ["latin"] });
-import Button from "./ui/Button";
+import Button from "./common/Button";
 
 import ReCAPTCHA from "react-google-recaptcha";
 import { ToastContainer, toast } from "react-toastify";

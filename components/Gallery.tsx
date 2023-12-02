@@ -1,4 +1,4 @@
-import Filter from "./ui/Filter";
+import Filter from "./common/Filter";
 
 import Image from "next/image";
 import { Syne } from "next/font/google";

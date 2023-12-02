@@ -24,12 +24,15 @@ export default function BackToTopButton() {
     return (
         <>
             {backToTopButton && (
-                <div className="flex justify-center h-16 w-16 rounded-xl bg-background
-                fixed right-0 bottom-16">
+                <div
+                    className="flex justify-center h-16 w-16 rounded-xl bg-background
+                fixed right-0 bottom-16"
+                >
                     <button>
                         <BsArrowUpSquareFill
                             onClick={scrollUp}
                             className="h-12 w-12 lg:h-9 lg:w-9 text-secondary pulse right-4"
+                            aria-label="Scroll Up"
                         />
                     </button>
                 </div>
