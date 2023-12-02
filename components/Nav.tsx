@@ -28,7 +28,11 @@ function Nav() {
                     <Link href="/login">login</Link>
                 </li>
                 <li>
-                    <Link href="https://www.instagram.com/" target="blank">
+                    <Link
+                        href="https://www.instagram.com/"
+                        target="blank"
+                        aria-label="Instagram"
+                    >
                         <PiInstagramLogoLight className="h-6 w-6 nav" />
                     </Link>
                 </li>

@@ -5,6 +5,8 @@ import NextTopLoader from "nextjs-toploader";
 
 import Nav from "@/components/Nav";
 const Footer = dynamic(() => import("@/components/Footer"));
+import BackToTopButton from "@/components/ui/BackToTopButton";
+
 import "./globals.css";
 
 const inter = Work_Sans({ subsets: ["latin"] });
@@ -28,6 +30,7 @@ export default function RootLayout({
                 px-4 md:px-8 lg:px-16 xl:max-w-7xl mx-auto mt-8`}
             >
                 <NextTopLoader color="#93532F" height={5} showSpinner={false} />
+                <BackToTopButton />
                 <Nav />
                 {children}
                 <Footer />

@@ -55,6 +55,7 @@ export default function LoginForm() {
 
             {/* Form */}
             <form
+                noValidate
                 onSubmit={handleSubmit(onSubmit)}
                 className="flex flex-col gap-10 mt-10 w-3/4 md:w-2/4 lg:w-1/3"
             >
@@ -67,6 +68,7 @@ export default function LoginForm() {
                         outline-none focus:border focus:border-primary focus:rounded"
                         type="email"
                         id="email"
+                        autoComplete="email"
                         {...register("email")}
                     />
                     {errors.email && (
@@ -84,6 +86,7 @@ export default function LoginForm() {
                         outline-none focus:border focus:border-primary focus:rounded"
                         type="password"
                         id="password"
+                        autoComplete="current-password"
                         {...register("password")}
                     />
                     {errors.password && (

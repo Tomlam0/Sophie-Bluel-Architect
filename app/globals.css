@@ -13,6 +13,22 @@
     hover:text-secondary hover:transition-all ease-in-out duration-300;
 }
 
+/* Keyframes */
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+
 /* Smooth nav scrolling */
 
 * {

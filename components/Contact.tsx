@@ -61,6 +61,7 @@ export default function Contact() {
 
             {/* Form */}
             <form
+                noValidate
                 onSubmit={handleSubmit(onSubmit)}
                 className="flex flex-col gap-10 mt-10 w-3/4 md:w-2/4 lg:w-1/3"
             >
@@ -73,6 +74,7 @@ export default function Contact() {
                         outline-none focus:border focus:border-primary focus:rounded"
                         type="text"
                         id="name"
+                        autoComplete="name"
                         {...register("name")}
                     />
                     {errors.name && (
@@ -90,6 +92,7 @@ export default function Contact() {
                         outline-none focus:border focus:border-primary focus:rounded"
                         type="email"
                         id="email"
+                        autoComplete="email"
                         {...register("email")}
                     />
                     {errors.email && (
