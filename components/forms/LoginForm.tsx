@@ -1,9 +1,10 @@
+// Used in Login page
 "use client";
 
 const syne = Syne({ subsets: ["latin"] });
-import Button from "./common/Button";
+import Button from "../common/Button";
+import ReCaptcha from "../services/ReCaptcha";
 
-import ReCAPTCHA from "react-google-recaptcha";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -95,14 +96,7 @@ export default function LoginForm() {
                         </span>
                     )}
                 </div>
-                <ReCAPTCHA
-                    className="flex justify-center"
-                    sitekey={
-                        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string
-                    }
-                    onChange={setCaptchaToken}
-                    size="compact"
-                />
+                <ReCaptcha onChange={setCaptchaToken} />
                 <Button text="Se connecter" />
             </form>
 

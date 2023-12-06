@@ -1,4 +1,6 @@
-import Filter from "./common/Filter";
+// Used in Home page
+
+import Filter from "../common/Filter";
 
 import Image from "next/image";
 import { Syne } from "next/font/google";

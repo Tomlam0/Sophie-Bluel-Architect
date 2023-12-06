@@ -1,3 +1,5 @@
+// Used in Home page
+
 import { Syne } from "next/font/google";
 import Image from "next/image";
 

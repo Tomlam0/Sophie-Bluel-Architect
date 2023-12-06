@@ -1,9 +1,10 @@
+// Used in Home page
 "use client";
 
 const syne = Syne({ subsets: ["latin"] });
 import { Syne } from "next/font/google";
 
-import Button from "./common/Button";
+import Button from "../common/Button";
 
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -11,7 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ReCaptcha from "./services/ReCaptcha";
+import ReCaptcha from "../services/ReCaptcha";
 
 // Zod validation
 const FormSchema = z.object({
