@@ -2,16 +2,16 @@
 "use client";
 
 const syne = Syne({ subsets: ["latin"] });
-import Button from "../common/Button";
-import ReCaptcha from "../services/ReCaptcha";
-
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Syne } from "next/font/google";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Syne } from "next/font/google";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import Button from "../common/Button";
+import ReCaptcha from "../services/ReCaptcha";
 
 // Zod validation
 const LoginFormSchema = z.object({
