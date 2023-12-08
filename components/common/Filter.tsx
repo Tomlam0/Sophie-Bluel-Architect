@@ -7,16 +7,12 @@ import clsx from "clsx";
 const syne = Syne({ subsets: ["latin"] });
 
 type FilterProps = {
-    text: string;
+    category: string;
+    isActive: boolean;
+    onToggle: () => void;
 };
 
-export default function Filter({ text }: FilterProps) {
-    const [isActive, setIsActive] = useState(false);
-
-    const toggleActive = () => {
-        setIsActive(!isActive);
-    };
-
+export default function Filter({ category, isActive, onToggle }: FilterProps) {
     return (
         <button
             className={clsx(
@@ -30,9 +26,9 @@ export default function Filter({ text }: FilterProps) {
                         isActive,
                 }
             )}
-            onClick={toggleActive}
+            onClick={onToggle}
         >
-            {text}
+            {category}
         </button>
     );
 }

@@ -1,11 +1,20 @@
 import Image from "next/image";
 
-import PicturesData from "../../data/galleryPicturesData.json";
+type Picture = {
+    id: number;
+    src: string;
+    title: string;
+    category: string;
+};
 
-export default function GalleryPicture() {
+interface GalleryPictureProps {
+    pictures: Picture[];
+}
+
+export default function GalleryPicture({ pictures }: GalleryPictureProps) {
     return (
         <>
-            {PicturesData.map((picture) => (
+            {pictures.map((picture) => (
                 <figure key={picture.id} className="flex flex-col gap-2">
                     <Image
                         src={picture.src}

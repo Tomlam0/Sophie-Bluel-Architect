@@ -7,71 +7,29 @@ import { Syne } from "next/font/google";
 import Filter from "../common/Filter";
 import ModifyButton from "../common/ModifyButton";
 import GalleryPicture from "../common/GalleryPicture";
+import PicturesData from "../../data/galleryPicturesData.json";
 
 const syne = Syne({ subsets: ["latin"] });
 
-const pictures = [
-    {
-        id: 1,
-        src: "https://picsum.photos/610/813?random=1.webp",
-        alt: "Image",
-        categorie: "Objets",
-    },
-    {
-        id: 2,
-        src: "https://picsum.photos/610/813?random=2.webp",
-        alt: "Image",
-        categorie: "Objets",
-    },
-    {
-        id: 3,
-        src: "https://picsum.photos/610/813?random=3.webp",
-        alt: "Image",
-        categorie: "Objets",
-    },
-    {
-        id: 4,
-        src: "https://picsum.photos/610/813?random=4.webp",
-        alt: "Image",
-        categorie: "Appartements",
-    },
-    {
-        id: 5,
-        src: "https://picsum.photos/610/813?random=5.webp",
-        alt: "Image",
-        categorie: "Appartements",
-    },
-    {
-        id: 6,
-        src: "https://picsum.photos/610/813?random=6.webp",
-        alt: "Image",
-        categorie: "Appartements",
-    },
-    {
-        id: 7,
-        src: "https://picsum.photos/610/813?random=7.webp",
-        alt: "Image",
-        categorie: "Hôtels & restaurants",
-    },
-    {
-        id: 8,
-        src: "https://picsum.photos/610/813?random=8.webp",
-        alt: "Image",
-        categorie: "Hôtels & restaurants",
-    },
-    {
-        id: 9,
-        src: "https://picsum.photos/610/813?random=9.webp",
-        alt: "Image",
-        categorie: "Hôtels & restaurants",
-    },
-];
-
 export default function Gallery() {
     const [isUserLogged, setIsUserLogged] = useState(false);
+    const [activeFilter, setActiveFilter] = useState<string | null>("Tous");
 
     // Simulated Frontend Fonction ( DELETE AFTER BACKEND)
     const toggleLogin = () => setIsUserLogged(!isUserLogged);
+    // END)
+
+    function handleFilter(category: string) {
+        setActiveFilter(category);
+    }
+
+    // Extract categories from Json
+    const categories = [
+        "Tous",
+        ...Array.from(
+            new Set(PicturesData.map((picture) => picture.category))
+        ),
+    ];
 
     return (
         <section id="gallery">
@@ -82,18 +40,23 @@ export default function Gallery() {
                 <button onClick={toggleLogin}>
                     {isUserLogged ? "Déconnexion" : "Connexion"}
                 </button>
+                {/*  end */}
                 {isUserLogged && <ModifyButton />}
             </div>
 
-            {/* Buttons */}
+            {/* Filter buttons */}
             <div
                 className="flex flex-col md:flex-row md:justify-center
             gap-7 mt-12 w-3/4 mx-auto md:w-full"
             >
-                <Filter text="Tous" />
-                <Filter text="Objets" />
-                <Filter text="Appartements" />
-                <Filter text="Hôtels & restaurants" />
+                {categories.map((category, index) => (
+                    <Filter
+                        key={index}
+                        category={category}
+                        isActive={activeFilter === category}
+                        onToggle={() => handleFilter(category)}
+                    />
+                ))}
             </div>
 
             {/* Picture Grid */}
@@ -101,7 +64,13 @@ export default function Gallery() {
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
                 gap-4 mt-12"
             >
-                <GalleryPicture />
+                {PicturesData.filter(
+                    (picture) =>
+                        activeFilter === "Tous" ||
+                        picture.category === activeFilter
+                ).map((picture) => (
+                    <GalleryPicture key={picture.id} pictures={[picture]} />
+                ))}
             </div>
         </section>
     );

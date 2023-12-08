@@ -3,54 +3,54 @@
         "id": 1,
         "src": "https://picsum.photos/610/813?random=1.webp",
         "title": "Hasard 1",
-        "categorie": "Objets"
+        "category": "Objets"
     },
     {
         "id": 2,
         "src": "https://picsum.photos/610/813?random=2.webp",
         "title": "Hasard 2",
-        "categorie": "Objets"
+        "category": "Objets"
     },
     {
         "id": 3,
         "src": "https://picsum.photos/610/813?random=3.webp",
         "title": "Hasard 3",
-        "categorie": "Objets"
+        "category": "Objets"
     },
     {
         "id": 4,
         "src": "https://picsum.photos/610/813?random=4.webp",
         "title": "Hasard 4",
-        "categorie": "Appartements"
+        "category": "Appartements"
     },
     {
         "id": 5,
         "src": "https://picsum.photos/610/813?random=5.webp",
         "title": "Hasard 5",
-        "categorie": "Appartements"
+        "category": "Appartements"
     },
     {
         "id": 6,
         "src": "https://picsum.photos/610/813?random=6.webp",
         "title": "Hasard 6",
-        "categorie": "Appartements"
+        "category": "Appartements"
     },
     {
         "id": 7,
         "src": "https://picsum.photos/610/813?random=7.webp",
         "title": "Hasard 7",
-        "categorie": "Hôtels & restaurants"
+        "category": "Hôtels & restaurants"
     },
     {
         "id": 8,
         "src": "https://picsum.photos/610/813?random=8.webp",
         "title": "Hasard 8",
-        "categorie": "Hôtels & restaurants"
+        "category": "Hôtels & restaurants"
     },
     {
         "id": 9,
         "src": "https://picsum.photos/610/813?random=9.webp",
         "title": "Hasard 9",
-        "categorie": "Hôtels & restaurants"
+        "category": "Hôtels & restaurants"
     }
 ]
