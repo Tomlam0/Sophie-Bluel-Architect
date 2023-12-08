@@ -1,28 +1,89 @@
 // Used in Home page
+"use client";
 
-import Filter from "../common/Filter";
-
+import { useState } from "react";
 import Image from "next/image";
 import { Syne } from "next/font/google";
+
+import Filter from "../common/Filter";
+import ModifyButton from "../common/ModifyButton";
 
 const syne = Syne({ subsets: ["latin"] });
 
 const pictures = [
-    { id: 1, src: "https://picsum.photos/610/813?random=1.webp", alt: "Image" },
-    { id: 2, src: "https://picsum.photos/610/813?random=2.webp", alt: "Image" },
-    { id: 3, src: "https://picsum.photos/610/813?random=3.webp", alt: "Image" },
-    { id: 4, src: "https://picsum.photos/610/813?random=4.webp", alt: "Image" },
-    { id: 5, src: "https://picsum.photos/610/813?random=5.webp", alt: "Image" },
-    { id: 6, src: "https://picsum.photos/610/813?random=6.webp", alt: "Image" },
-    { id: 7, src: "https://picsum.photos/610/813?random=7.webp", alt: "Image" },
-    { id: 8, src: "https://picsum.photos/610/813?random=8.webp", alt: "Image" },
-    { id: 9, src: "https://picsum.photos/610/813?random=9.webp", alt: "Image" },
+    {
+        id: 1,
+        src: "https://picsum.photos/610/813?random=1.webp",
+        alt: "Image",
+        categorie: "Objets",
+    },
+    {
+        id: 2,
+        src: "https://picsum.photos/610/813?random=2.webp",
+        alt: "Image",
+        categorie: "Objets",
+    },
+    {
+        id: 3,
+        src: "https://picsum.photos/610/813?random=3.webp",
+        alt: "Image",
+        categorie: "Objets",
+    },
+    {
+        id: 4,
+        src: "https://picsum.photos/610/813?random=4.webp",
+        alt: "Image",
+        categorie: "Appartements",
+    },
+    {
+        id: 5,
+        src: "https://picsum.photos/610/813?random=5.webp",
+        alt: "Image",
+        categorie: "Appartements",
+    },
+    {
+        id: 6,
+        src: "https://picsum.photos/610/813?random=6.webp",
+        alt: "Image",
+        categorie: "Appartements",
+    },
+    {
+        id: 7,
+        src: "https://picsum.photos/610/813?random=7.webp",
+        alt: "Image",
+        categorie: "Hôtels & restaurants",
+    },
+    {
+        id: 8,
+        src: "https://picsum.photos/610/813?random=8.webp",
+        alt: "Image",
+        categorie: "Hôtels & restaurants",
+    },
+    {
+        id: 9,
+        src: "https://picsum.photos/610/813?random=9.webp",
+        alt: "Image",
+        categorie: "Hôtels & restaurants",
+    },
 ];
 
 export default function Gallery() {
+    const [isUserLogged, setIsUserLogged] = useState(false);
+
+    // Simulated Frontend Fonction ( DELETE AFTER BACKEND)
+    const toggleLogin = () => setIsUserLogged(!isUserLogged);
+
     return (
         <section id="gallery">
-            <h2 className={`${syne.className} title`}>Mes projets</h2>
+            <div className="flex flex-col justify-center gap-3">
+                <h2 className={`${syne.className} title`}>Mes projets</h2>
+
+                {/*  Simulated Frontend Button ( DELETE AFTER BACKEND) */}
+                <button onClick={toggleLogin}>
+                    {isUserLogged ? "Déconnexion" : "Connexion"}
+                </button>
+                {isUserLogged && <ModifyButton />}
+            </div>
 
             {/* Buttons */}
             <div

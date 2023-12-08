@@ -1,20 +1,19 @@
 // Used in Home page
 "use client";
 
-const syne = Syne({ subsets: ["latin"] });
 import { Syne } from "next/font/google";
-
-import Button from "../common/Button";
-
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ReCaptcha from "../services/ReCaptcha";
 
-// Zod validation
+import ReCaptcha from "../services/ReCaptcha";
+import Button from "../common/Button";
+
+const syne = Syne({ subsets: ["latin"] });
+
 const FormSchema = z.object({
     name: z
         .string()
@@ -61,7 +60,6 @@ export default function ContactForm() {
             <h2 className={`${syne.className} title`}>Contact</h2>
             <p className="mt-1">Vous avez un projet ? Discutons-en</p>
 
-            {/* Form */}
             <form
                 noValidate
                 onSubmit={handleSubmit(onSubmit)}
