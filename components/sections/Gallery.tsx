@@ -2,11 +2,11 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Syne } from "next/font/google";
 
 import Filter from "../common/Filter";
 import ModifyButton from "../common/ModifyButton";
+import GalleryPicture from "../common/GalleryPicture";
 
 const syne = Syne({ subsets: ["latin"] });
 
@@ -101,19 +101,7 @@ export default function Gallery() {
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
                 gap-4 mt-12"
             >
-                {pictures.map((picture) => (
-                    <figure key={picture.id} className="flex flex-col gap-2">
-                        <Image
-                            src={picture.src}
-                            alt={picture.alt}
-                            width={610}
-                            height={813}
-                        />
-                        <figcaption className="text-sm">
-                            Abat-jour Tahina
-                        </figcaption>
-                    </figure>
-                ))}
+                <GalleryPicture />
             </div>
         </section>
     );
