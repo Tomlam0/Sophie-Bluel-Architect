@@ -1,12 +1,24 @@
-import React from "react";
 import { createPortal } from "react-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiOutlinePencilSquare } from "react-icons/hi2";
 
 import Modal from "../sections/Modal";
 
 export default function ModifyButton() {
     const [showModal, setShowModal] = useState(false);
+
+    // Used to add or remove scrolling on background when modal is open
+    useEffect(() => {
+        if (showModal) {
+            document.body.classList.add("overflow-hidden");
+        } else {
+            document.body.classList.remove("overflow-hidden");
+        }
+        // Clean up class when component is dismount
+        return () => {
+            document.body.classList.remove("overflow-hidden");
+        };
+    }, [showModal]);
 
     return (
         <>
@@ -22,6 +34,8 @@ export default function ModifyButton() {
                     <p className="text-sm">modifier</p>
                 </button>
             </div>
+
+            {/* Create Portal can dislay modal*/}
             {showModal &&
                 createPortal(
                     <Modal

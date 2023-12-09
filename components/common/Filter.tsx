@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
 import { Syne } from "next/font/google";
-import clsx from "clsx";
-
 const syne = Syne({ subsets: ["latin"] });
+import clsx from "clsx";
 
 type FilterProps = {
     category: string;

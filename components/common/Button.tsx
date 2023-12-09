@@ -1,5 +1,4 @@
 import { Syne } from "next/font/google";
-
 const syne = Syne({ subsets: ["latin"] });
 
 type Props = {

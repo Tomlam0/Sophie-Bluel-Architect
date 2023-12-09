@@ -25,7 +25,7 @@ export default function BackToTopButton() {
         <>
             {backToTopButton && (
                 <div
-                    className="flex justify-center h-16 w-16 rounded-xl bg-background
+                    className="z-10 flex justify-center h-16 w-16 rounded-xl bg-background
                 fixed right-0 bottom-16"
                 >
                     <button>

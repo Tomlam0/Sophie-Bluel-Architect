@@ -26,9 +26,7 @@ export default function Gallery() {
     // Extract categories from Json
     const categories = [
         "Tous",
-        ...Array.from(
-            new Set(PicturesData.map((picture) => picture.category))
-        ),
+        ...Array.from(new Set(PicturesData.map((picture) => picture.category))),
     ];
 
     return (
@@ -59,7 +57,7 @@ export default function Gallery() {
                 ))}
             </div>
 
-            {/* Picture Grid */}
+            {/* Pictures Grid */}
             <div
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
                 gap-4 mt-12"
@@ -69,7 +67,12 @@ export default function Gallery() {
                         activeFilter === "Tous" ||
                         picture.category === activeFilter
                 ).map((picture) => (
-                    <GalleryPicture key={picture.id} pictures={[picture]} />
+                    <GalleryPicture
+                        key={picture.id}
+                        pictures={[picture]}
+                        showTitles={true}
+                        showDeleteIcon={false}
+                    />
                 ))}
             </div>
         </section>

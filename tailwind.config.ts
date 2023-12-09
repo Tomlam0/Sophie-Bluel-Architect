@@ -15,6 +15,7 @@ const config: Config = {
             textDark: "#000000",
             placeholder: "#FFFFFF",
             background: "#FFFEF8",
+            deleteIcon: "#C91111",
         },
         extend: {},
     },
