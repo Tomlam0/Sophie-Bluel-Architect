@@ -10,8 +10,8 @@ type Picture = {
 
 interface GalleryPictureProps {
     pictures: Picture[];
-    showTitles: boolean;
-    showDeleteIcon: boolean;
+    showTitles?: boolean;
+    showDeleteIcon?: boolean;
 }
 
 export default function GalleryPicture({

@@ -16,6 +16,8 @@ const config: Config = {
             placeholder: "#FFFFFF",
             background: "#FFFEF8",
             deleteIcon: "#C91111",
+            addPictureForm: "#E8F1F6",
+            addPictureFormDarker: "#CBD6DC",
         },
         extend: {},
     },

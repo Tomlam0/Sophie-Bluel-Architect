@@ -16,6 +16,7 @@ export default function Hero() {
                 width={474}
                 height={355}
                 alt="Sophie Bluel"
+                priority={true}
             />
 
             {/* Text block */}

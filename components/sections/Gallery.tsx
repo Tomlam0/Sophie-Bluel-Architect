@@ -70,8 +70,6 @@ export default function Gallery() {
                     <GalleryPicture
                         key={picture.id}
                         pictures={[picture]}
-                        showTitles={true}
-                        showDeleteIcon={false}
                     />
                 ))}
             </div>

@@ -13,7 +13,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Button from "../common/Button";
 import ReCaptcha from "../services/ReCaptcha";
 
-// Zod validation
 const LoginFormSchema = z.object({
     email: z
         .string()
@@ -41,7 +40,6 @@ export default function LoginForm() {
         resolver: zodResolver(LoginFormSchema),
     });
 
-    // Checking if Captcha is resolved before submit validation
     const onSubmit: SubmitHandler<Inputs> = () => {
         if (!captchaToken) {
             toast.error("Veuillez résoudre le CAPTCHA.");
@@ -60,6 +58,7 @@ export default function LoginForm() {
                 onSubmit={handleSubmit(onSubmit)}
                 className="flex flex-col gap-10 mt-10 w-3/4 md:w-2/4 lg:w-1/3"
             >
+                {/* Email */}
                 <div>
                     <label className="text-sm" htmlFor="email">
                         E-mail
@@ -78,6 +77,8 @@ export default function LoginForm() {
                         </span>
                     )}
                 </div>
+
+                {/* Password */}
                 <div>
                     <label className="text-sm" htmlFor="password">
                         Mot de passe

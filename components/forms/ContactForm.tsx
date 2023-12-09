@@ -46,7 +46,6 @@ export default function ContactForm() {
         resolver: zodResolver(FormSchema),
     });
 
-    // Checking if Captcha is resolved before submit validation
     const onSubmit: SubmitHandler<Inputs> = () => {
         if (!captchaToken) {
             toast.error("Veuillez résoudre le CAPTCHA.");
@@ -65,6 +64,7 @@ export default function ContactForm() {
                 onSubmit={handleSubmit(onSubmit)}
                 className="flex flex-col gap-10 mt-10 w-3/4 md:w-2/4 lg:w-1/3"
             >
+                {/* Name */}
                 <div>
                     <label className="text-sm" htmlFor="name">
                         Nom
@@ -83,6 +83,8 @@ export default function ContactForm() {
                         </span>
                     )}
                 </div>
+
+                {/* Email */}
                 <div>
                     <label className="text-sm" htmlFor="email">
                         E-mail
@@ -101,6 +103,8 @@ export default function ContactForm() {
                         </span>
                     )}
                 </div>
+
+                {/* Message */}
                 <div>
                     <label className="text-sm" htmlFor="message">
                         Message
