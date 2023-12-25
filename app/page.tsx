@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
 
-import ContactForm from "@/components/forms/ContactForm";
-const Gallery = dynamic(() => import("@/components/sections/Gallery"));
-const Hero = dynamic(() => import("@/components/sections/Hero"));
+import Hero from "@/components/content/Hero";
+const Gallery = dynamic(() => import("@/components/content/Gallery"));
+const ContactForm = dynamic(() => import("@/components/forms/ContactForm"));
 
 export default function Home() {
     return (

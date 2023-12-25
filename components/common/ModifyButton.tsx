@@ -2,7 +2,7 @@ import { createPortal } from "react-dom";
 import { useState, useEffect } from "react";
 import { HiOutlinePencilSquare } from "react-icons/hi2";
 
-import Modal from "../sections/Modal";
+import Modal from "../content/Modal";
 
 export default function ModifyButton() {
     const [showModal, setShowModal] = useState(false);

@@ -1,15 +1,15 @@
 import Image from "next/image";
 import { FaTrashAlt } from "react-icons/fa";
 
-type Picture = {
+interface PictureProps {
     id: number;
     src: string;
     title: string;
     category: string;
-};
+}
 
 interface GalleryPictureProps {
-    pictures: Picture[];
+    pictures: PictureProps[];
     showTitles?: boolean;
     showDeleteIcon?: boolean;
 }
