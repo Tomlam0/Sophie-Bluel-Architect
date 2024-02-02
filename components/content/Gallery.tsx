@@ -17,7 +17,6 @@ export default function Gallery() {
 
     // Simulated Frontend Fonction ( DELETE AFTER BACKEND)
     const toggleLogin = () => setIsUserLogged(!isUserLogged);
-    // END)
 
     function handleFilter(category: string) {
         setActiveFilter(category);
@@ -35,7 +34,10 @@ export default function Gallery() {
                 <h2 className={`${syne.className} title`}>Mes projets</h2>
 
                 {/*  Simulated Frontend Button ( DELETE AFTER BACKEND) */}
-                <button onClick={toggleLogin}>
+                <button
+                    onClick={toggleLogin}
+                    className="hover:text-primary transition-colors duration-300 ease-in-out"
+                >
                     {isUserLogged ? "Déconnexion" : "Connexion"}
                 </button>
                 {/*  end */}
@@ -67,10 +69,7 @@ export default function Gallery() {
                         activeFilter === "Tous" ||
                         picture.category === activeFilter
                 ).map((picture) => (
-                    <GalleryPicture
-                        key={picture.id}
-                        pictures={[picture]}
-                    />
+                    <GalleryPicture key={picture.id} pictures={[picture]} />
                 ))}
             </div>
         </section>
